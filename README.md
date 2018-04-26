@@ -1,0 +1,2 @@
+# shachi
+Bot for Discord!
