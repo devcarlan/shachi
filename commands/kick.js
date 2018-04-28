@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!kUser)  return message.channel.send("Couldn't find user.");
   let kReason = args.join(" ").slice(22);
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have sufficient privledges to use this command.");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have sufficient priviledges to use this command.");
   if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("This user cannot be kicked.");
 
   let kickEmbed = new Discord.RichEmbed()
