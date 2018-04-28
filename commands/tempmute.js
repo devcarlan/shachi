@@ -7,8 +7,7 @@ module.exports.run = async(bot, message, args) => {
    * !tempmute
    * @user
    * @time 1s/m/h/d
-  */
-
+   */
   let tomute = (message.mentions.members.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find that user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("That user cannot be muted!");
