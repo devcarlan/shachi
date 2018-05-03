@@ -9,6 +9,11 @@ module.exports.run = async (bot, message, args) => {
   if(!wUser) return message.reply("Couldn't find that user on this server.");
   let warnlevel = warns[wUser.id].warns;
 
-  message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`)
+  message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`);
 
 } //end of module
+
+
+module.exports.help = {
+  name: "warnlevel"
+}
