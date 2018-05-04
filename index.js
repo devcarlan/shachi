@@ -29,6 +29,34 @@ bot.on("ready", async () => {
   bot.user.setActivity("being coded!");
 });
 
+bot.on("guildMemberAdd", async member => {
+  console.log(`${member.id} joined the server!`);
+
+  let welcomechannel = member.guild.channels.find(`name`, `general`);
+  welcomechannel.send(`HERE COMES ${member} EVERYONE SHHHHHH!`);
+});
+
+bot.on("guildMemberRemove", async member => {
+  console.log(`${member.id} left the server!`);
+
+  let welcomechannel = member.guild.channels.find(`name`, `general`);
+  welcomechannel.send(`Later, ${member}.`);
+});
+
+bot.on("channelCreate", async channel => {
+  console.log(`Channel: ${channel.name}, has been created.`);
+
+  let sChannel = channel.guild.channels.find(`name`, "general");
+  sChannel.send(`${channel} has been created!`);
+});
+
+bot.on("channelDelete", async channel => {
+  console.log(`Channel: ${channel.name}, has been deleted.`);
+
+  let sChannel = channel.guild.channels.find(`name`, "general");
+  sChannel.send(`${channel.name} has been deleted!`);
+});
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
